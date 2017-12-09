@@ -1,0 +1,15 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "practice for node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "t",
+    "start": "node server.js"
+  },
+  "author": "jianghai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

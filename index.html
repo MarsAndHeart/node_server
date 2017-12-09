@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>Sample Page</title>
+</head>
+
+<body>
+  Hello World!
+  <div onclick="clickit()">
+    click to post
+  </div>
+</body>
+
+<script>
+  function clickit() {
+    console.log('click it');
+
+    var body = {"name":"mike"}
+
+    fetch("http://localhost:3000", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      console.log(data);
+    }).catch(function (e) {
+      console.log(e);
+    });
+
+  }
+</script>
+
+</html>
