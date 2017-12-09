@@ -5,10 +5,6 @@ var customerList = new CustomerList;
 function APIConfig() {
   var list = [
     {
-      path: '/login',
-      data: loginData.success,
-    },
-    {
       path: '/customerList',
       data: customerList.success,
     },
