@@ -1,8 +1,6 @@
 var http = require('http');
-var querystring = require('querystring');
-var fs = require("fs");
 
-var APIConfig = require('./api/APIConfig');
+var APIConfig = require('./api_bocommlife/APIConfig');
 var apiConfig = new APIConfig;
 
 http.createServer(function (req, res) {
