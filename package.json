@@ -5,11 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "t",
-    "start": "node server.js"
+    "start": "node server.js",
+    "startPostApi": "node postServer/postApi.js",
+    "startPostApiWithLog": "node postServer/postApiWithLog.js",
+    "startConnectDB": "node nodeToDB/nodeMySQL.js"
   },
   "author": "jianghai",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "moment": "^2.20.0",
+    "mysql": "^2.15.0"
   }
 }

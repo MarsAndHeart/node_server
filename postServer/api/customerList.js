@@ -26,6 +26,9 @@ var data = {
   },
 }
 
-module.exports = function CustomerList(){
-  return data
+module.exports = function () {
+  this.getData = (reqData,callback)=>{
+    console.log(reqData)
+    callback(data.success)
+  }
 }

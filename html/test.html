@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#test").click(function () {
+        var json = {id:'111'}
+        $.ajax({
+          'url': 'http://localhost:3000',
+          'method': 'POST',
+          'data': JSON.stringify(json),
+          'success': function (data) {
+            console.log(data);
+          }
+        });
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <p id="test">click me</p>
+</body>
+
+</html>
