@@ -42,7 +42,7 @@ buck-out/
 *.keystore
 
 # project
-api_bocommlife/
+api_boco/
 
 # fastlane
 #
