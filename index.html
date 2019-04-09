@@ -1,6 +1,9 @@
 <html>
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta charSet='utf-8' />
+  <link rel='shortcut icon' href='favicon.ico' type='image/ico'/>
   <title>Sample Page</title>
 </head>
 
@@ -17,7 +20,7 @@
 
     var body = {"name":"mike"}
 
-    fetch("http://localhost:3000/customerList?reqid=233", {
+    fetch("http://0.0.0.0:7300/mock/5c0f7762c8af72d443b79229/test/customerList", {
       method: "POST",
       body: JSON.stringify(body),
     }).then(function (response) {
