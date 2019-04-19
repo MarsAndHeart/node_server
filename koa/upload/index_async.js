@@ -22,7 +22,8 @@ app.use(async ctx => {
     await ctx.render('index', {
       title
     });
-  } else if (ctx.url === '/api/picture/upload.json' && ctx.method === 'POST') {
+  } else if (ctx.url === '/api/picture/upload'
+    && (ctx.method === 'POST' || ctx.method === 'OPTIONS')) {
     let result = { success: false };
     let serverFilePath = path.join(__dirname, 'static/image');
 
@@ -30,6 +31,10 @@ app.use(async ctx => {
       fileType: 'common',
       path: serverFilePath
     });
+
+    ctx.set('Access-Control-Allow-Origin', '*');
+    ctx.set("Access-Control-Allow-Headers", "X-Requested-With,Content-Type");
+    ctx.set("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
 
     ctx.body = result;
   } else {
