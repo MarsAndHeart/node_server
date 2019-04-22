@@ -12,20 +12,20 @@ app.use(
   })
 );
 
-const staticPath = './static';
+const staticPath = './upload-files';
 
 app.use(static(path.join(__dirname, staticPath)));
 
 app.use(async ctx => {
   if (ctx.method === 'GET') {
-    let title = 'upload pic async';
+    let title = 'upload file async';
     await ctx.render('index', {
       title
     });
-  } else if (ctx.url === '/api/picture/upload'
+  } else if (ctx.url === '/api/upload'
     && (ctx.method === 'POST' || ctx.method === 'OPTIONS')) {
     let result = { success: false };
-    let serverFilePath = path.join(__dirname, 'static/image');
+    let serverFilePath = path.join(__dirname, 'upload-files');
 
     result = await uploadFile(ctx, {
       fileType: 'common',
@@ -43,5 +43,5 @@ app.use(async ctx => {
 });
 
 app.listen(10099, () => {
-  console.log('upload-pic-async is starting at 10099');
+  console.log('upload-file-async is starting at 10099');
 });
