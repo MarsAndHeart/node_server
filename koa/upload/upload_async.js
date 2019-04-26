@@ -54,7 +54,7 @@ function uploadFile(ctx, options) {
         result.message = 'upload success';
         result.data = {
           name: fileName,
-          url: `//${ctx.host}/image/${fileType}/${fileName}`
+          url: `//${ctx.host}/${fileType}/${fileName}`
         };
         console.log('success.');
         resolve(result);
