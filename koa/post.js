@@ -29,7 +29,25 @@ const parsePostData = ctx => {
   });
 };
 
+function getClientIP(req) {
+  console.log(
+    JSON.stringify({
+      reqHeader: req.headers['x-forwarded-for'],
+      reqCR: req.connection.remoteAddress,
+      reqSR: req.socket.remoteAddress
+      // reqCSR: req.connection.socket.remoteAddress
+    })
+  );
+  return (
+    req.headers['x-forwarded-for'] || // 判断是否有反向代理 IP
+    req.connection.remoteAddress || // 判断 connection 的远程 IP
+    req.socket.remoteAddress || // 判断后端的 socket 的 IP
+    req.connection.socket.remoteAddress
+  );
+}
+
 app.use(async ctx => {
+  console.log(JSON.stringify({ ip: getClientIP(ctx.req) }));
   if (ctx.url === '/' && ctx.method === 'GET') {
     ctx.body = 'hello';
   } else if (ctx.url === '/' && ctx.method === 'POST') {
